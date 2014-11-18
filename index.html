@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>SectorMenu Test</title>
+    <style type="text/css">
+        #menul {
+            width: 3.7em;
+            height: 3.7em;
+            background: red;
+            -moz-border-radius: 3.7em;
+            -webkit-border-radius: 3.7em;
+            border-radius: 50px;
+            bottom: 100px;
+            right: 100px;
+            position: fixed;
+            z-index: 2;
+        }
+        .hover{}
+        .hover:hover{
+             background-color: #ff0000
+         }
+
+    </style>
+
+
+</head>
+
+<body>
+    <div id="menul"></div>
+<script src="js/zepto.js"></script>
+<script src="js/zepto.touch.js"></script>
+<script src="js/zepto.sectorMenu.js"></script>
+</body>
+<script>
+    $('#menul').sectorMenu({
+        angle:45,
+        radius:150,
+        count:3,
+        itemIcon:[
+            'icon/01.png',
+            'icon/02.png',
+            'icon/03.png',
+        ],
+        itemTag:[
+            'btn-share',
+            'btn-wish',
+            'btn-setting'
+        ],
+        itemClass:'hover',
+        itemEvent:function(e){
+            console.log($(this).data('tag'));
+        },
+        itemWidth:3,
+        itemHeight:3,
+        event:'tap'
+    });
+</script>
+</html>
